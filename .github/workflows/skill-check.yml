@@ -3,7 +3,7 @@ name: Skill Validation
 on:
   pull_request:
     paths:
-      - 'tomf-skills-repo/**'
+      - 'skills/**'
 
 jobs:
   validate-skill-structure:
@@ -16,9 +16,9 @@ jobs:
         run: |
           echo "Starting Skill Validation..."
           
-          # Find all subdirectories in tomf-skills-repo that are 3 levels deep (category/subcategory/skill)
+          # Find all subdirectories in skills that are 3 levels deep (category/subcategory/skill)
           # We look for SKILL.md files to identify skill roots
-          SKILL_FILES=$(find tomf-skills-repo -name "SKILL.md")
+          SKILL_FILES=$(find skills -name "SKILL.md")
           
           if [ -z "$SKILL_FILES" ]; then
             echo "No SKILL.md files found. If this PR adds a skill, please ensure it has a SKILL.md."
@@ -43,12 +43,12 @@ jobs:
               HAS_ERROR=1
             fi
             
-            # 2. Check path depth (should be tomf-skills-repo/category/subcategory/skill-name)
-            # Count slashes. tomf-skills-repo/cat/sub/skill/SKILL.md has 4 slashes
+            # 2. Check path depth (should be skills/category/subcategory/skill-name)
+            # Count slashes. skills/cat/sub/skill/SKILL.md has 4 slashes
             SLASH_COUNT=$(echo "$file" | tr -cd '/' | wc -c)
             if [ "$SLASH_COUNT" -lt 4 ]; then
               echo "Error: $file seems to be in the wrong location."
-              echo "   Expected: tomf-skills-repo/<category>/<subcategory>/<skill-name>/SKILL.md"
+              echo "   Expected: skills/<category>/<subcategory>/<skill-name>/SKILL.md"
               HAS_ERROR=1
             fi
           done

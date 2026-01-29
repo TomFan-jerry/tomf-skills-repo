@@ -7,28 +7,28 @@ Thank you for your interest in contributing! This repository aims to build a hig
 ### 1. Identify the Correct Path
 We use a **Process-Based** directory structure with specific subcategories. Please find the most appropriate location for your skill:
 
-*   **tomf-skills-repo/planning/**
+*   **skills/planning/**
     *   `requirements/` (PRDs, User Stories)
     *   `research/` (User Research, Market Analysis)
     *   `strategy/` (Business Plans, Roadmaps)
-*   **tomf-skills-repo/design/**
+*   **skills/design/**
     *   `ui-ux/` (Design Systems, Component Specs)
     *   `visual-assets/` (Icons, Color Palettes)
     *   `prototyping/` (Wireframes, Interaction Flows)
-*   **tomf-skills-repo/development/**
+*   **skills/development/**
     *   `frontend/` (React, Vue, CSS)
     *   `backend/` (Node, Python, API Logic)
     *   `architecture/` (System Design, Patterns)
     *   `database/` (SQL, Schema Design)
-*   **tomf-skills-repo/quality/**
+*   **skills/quality/**
     *   `code-review/` (Linters, Best Practices)
     *   `testing/` (Unit, E2E Tests)
     *   `security/` (Audits, Vulnerability Checks)
-*   **tomf-skills-repo/operations/**
+*   **skills/operations/**
     *   `data-analysis/` (SQL, Excel, Visualization)
     *   `marketing-seo/` (Content, SEO)
     *   `deployment/` (Docker, CI/CD)
-*   **tomf-skills-repo/office-tools/**
+*   **skills/office-tools/**
     *   `document-processing/` (Converters, OCR)
     *   `communication/` (Emails, Meeting Notes)
     *   `productivity/` (Time Management, Automation)
@@ -37,14 +37,14 @@ We use a **Process-Based** directory structure with specific subcategories. Plea
 Create a new folder for your skill inside the chosen subcategory. Use **kebab-case** for the folder name.
 
 **Example Path:**
-`tomf-skills-repo/design/ui-ux/modern-glassmorphism/`
+`skills/design/ui-ux/modern-glassmorphism/`
 
 ### 3. Add Required Files
 Your skill directory **MUST** contain a `SKILL.md` file.
 
 **File Structure:**
 ```text
-tomf-skills-repo/category/subcategory/your-skill-name/
+skills/category/subcategory/your-skill-name/
 ├── SKILL.md          (REQUIRED: The prompt definition)
 ├── README.md         (RECOMMENDED: Documentation for humans)
 └── scripts/          (OPTIONAL: Helper scripts if needed)

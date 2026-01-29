@@ -7,7 +7,7 @@
 This repository follows a **Process-Based Classification** system to help you find the right tool for your current workflow stage.
 
 ```text
-├── tomf-skills-repo/
+├── skills/
 │   ├── planning/           # 1. Planning & Definition (0 -> 1)
 │   │   ├── requirements/       # Requirements gathering (PRD, User Stories)
 │   │   ├── research/           # Market & User Research
@@ -47,53 +47,53 @@ This repository follows a **Process-Based Classification** system to help you fi
 
 | Subcategory | Skill Examples | Path |
 |-------------|----------------|------|
-| **Requirements** | PRD Writer, User Story Gen | `tomf-skills-repo/planning/requirements/` |
-| **Strategy** | Business Plan, Roadmap Gen | `tomf-skills-repo/planning/strategy/` |
-| **Research** | User Persona, Competitor Analysis | `tomf-skills-repo/planning/research/` |
+| **Requirements** | PRD Writer, User Story Gen | `skills/planning/requirements/` |
+| **Strategy** | Business Plan, Roadmap Gen | `skills/planning/strategy/` |
+| **Research** | User Persona, Competitor Analysis | `skills/planning/research/` |
 
 ### 2. Design
 > Tools for UI/UX designers and creative directors.
 
 | Subcategory | Skill Examples | Path |
 |-------------|----------------|------|
-| **UI/UX** | **UI/UX Pro Max** (Tailwind/React) | `tomf-skills-repo/design/ui-ux/ui-ux-pro-max` |
-| **Prototyping** | Wireframe Description | `tomf-skills-repo/design/prototyping/` |
-| **Visual Assets** | Icon Generator, Color Palette | `tomf-skills-repo/design/visual-assets/` |
+| **UI/UX** | **UI/UX Pro Max** (Tailwind/React) | `skills/design/ui-ux/ui-ux-pro-max` |
+| **Prototyping** | Wireframe Description | `skills/design/prototyping/` |
+| **Visual Assets** | Icon Generator, Color Palette | `skills/design/visual-assets/` |
 
 ### 3. Development
 > Tools for frontend, backend, and full-stack engineers.
 
 | Subcategory | Skill Examples | Path |
 |-------------|----------------|------|
-| **Frontend** | React/Vue Component Gen | `tomf-skills-repo/development/frontend/` |
-| **Backend** | API Logic, Auth Flows | `tomf-skills-repo/development/backend/` |
-| **Architecture** | API Designer, System Design | `tomf-skills-repo/development/architecture/` |
+| **Frontend** | React/Vue Component Gen | `skills/development/frontend/` |
+| **Backend** | API Logic, Auth Flows | `skills/development/backend/` |
+| **Architecture** | API Designer, System Design | `skills/development/architecture/` |
 
 ### 4. Quality
 > Tools for QA engineers and code reviewers.
 
 | Subcategory | Skill Examples | Path |
 |-------------|----------------|------|
-| **Code Review** | Clean Code Checker | `tomf-skills-repo/quality/code-review/` |
-| **Testing** | Jest/PyTest Generator | `tomf-skills-repo/quality/testing/` |
-| **Security** | Dependency Audit | `tomf-skills-repo/quality/security/` |
+| **Code Review** | Clean Code Checker | `skills/quality/code-review/` |
+| **Testing** | Jest/PyTest Generator | `skills/quality/testing/` |
+| **Security** | Dependency Audit | `skills/quality/security/` |
 
 ### 5. Operations
 > Tools for data analysts, marketers, and growth hackers.
 
 | Subcategory | Skill Examples | Path |
 |-------------|----------------|------|
-| **Data Analysis** | Excel/SQL Wizard | `tomf-skills-repo/operations/data-analysis/` |
-| **Marketing/SEO** | SEO Optimizer, Content Writer | `tomf-skills-repo/operations/marketing-seo/` |
-| **Deployment** | Docker/K8s Config | `tomf-skills-repo/operations/deployment/` |
+| **Data Analysis** | Excel/SQL Wizard | `skills/operations/data-analysis/` |
+| **Marketing/SEO** | SEO Optimizer, Content Writer | `skills/operations/marketing-seo/` |
+| **Deployment** | Docker/K8s Config | `skills/operations/deployment/` |
 
 ### 6. Office Tools
 > Productivity boosters for everyone.
 
 | Subcategory | Skill Examples | Path |
 |-------------|----------------|------|
-| **Docs** | PDF to Markdown, OCR | `tomf-skills-repo/office-tools/document-processing/` |
-| **Comm** | Meeting Minutes, Email Helper | `tomf-skills-repo/office-tools/communication/` |
+| **Docs** | PDF to Markdown, OCR | `skills/office-tools/document-processing/` |
+| **Comm** | Meeting Minutes, Email Helper | `skills/office-tools/communication/` |
 
 ---
 
@@ -121,7 +121,7 @@ Contributions are welcome! Please follow these steps to add new skills:
 1.  **Fork** the repository.
 2.  **Create** a new branch for your feature.
 3.  **Place** your skill folder in the appropriate category path:
-    *   `tomf-skills-repo/<category>/<subcategory>/<your-skill-name>/`
+    *   `skills/<category>/<subcategory>/<your-skill-name>/`
 4.  **Ensure** your skill folder contains a valid `SKILL.md`.
 5.  **Submit** a Pull Request.
 
