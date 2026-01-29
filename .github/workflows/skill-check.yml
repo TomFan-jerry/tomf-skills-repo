@@ -1,0 +1,61 @@
+name: Skill Validation
+
+on:
+  pull_request:
+    paths:
+      - 'tomf-skills-repo/**'
+
+jobs:
+  validate-skill-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check Directory Structure & SKILL.md
+        run: |
+          echo "Starting Skill Validation..."
+          
+          # Find all subdirectories in tomf-skills-repo that are 3 levels deep (category/subcategory/skill)
+          # We look for SKILL.md files to identify skill roots
+          SKILL_FILES=$(find tomf-skills-repo -name "SKILL.md")
+          
+          if [ -z "$SKILL_FILES" ]; then
+            echo "No SKILL.md files found. If this PR adds a skill, please ensure it has a SKILL.md."
+            # We don't fail here because maybe the PR just updates README
+            exit 0
+          fi
+          
+          HAS_ERROR=0
+          
+          for file in $SKILL_FILES; do
+            DIR=$(dirname "$file")
+            echo "Checking skill in: $DIR"
+            
+            # 1. Check if SKILL.md has required frontmatter (name and description)
+            if ! grep -q "^name:" "$file"; then
+              echo "Error: $file is missing 'name' field in frontmatter."
+              HAS_ERROR=1
+            fi
+            
+            if ! grep -q "^description:" "$file"; then
+              echo "Error: $file is missing 'description' field in frontmatter."
+              HAS_ERROR=1
+            fi
+            
+            # 2. Check path depth (should be tomf-skills-repo/category/subcategory/skill-name)
+            # Count slashes. tomf-skills-repo/cat/sub/skill/SKILL.md has 4 slashes
+            SLASH_COUNT=$(echo "$file" | tr -cd '/' | wc -c)
+            if [ "$SLASH_COUNT" -lt 4 ]; then
+              echo "Error: $file seems to be in the wrong location."
+              echo "   Expected: tomf-skills-repo/<category>/<subcategory>/<skill-name>/SKILL.md"
+              HAS_ERROR=1
+            fi
+          done
+          
+          if [ "$HAS_ERROR" -eq 1 ]; then
+            echo "Validation Failed. Please fix the errors above."
+            exit 1
+          else
+            echo "All skills look good!"
+          fi
